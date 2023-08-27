@@ -1,9 +1,9 @@
-import { MongoClient } from "mongodb"
+import { Db, MongoClient } from "mongodb"
 
 import { jest } from "@jest/globals"
 
-let connection
-let db
+let connection: MongoClient
+let db: Db
 
 jest.useFakeTimers({ doNotFake: ["nextTick", "setImmediate"] })
 
