@@ -5,8 +5,9 @@ import { jest } from "@jest/globals"
 let connection
 let db
 
+jest.useFakeTimers({ doNotFake: ["nextTick", "setImmediate"] })
+
 beforeAll(async () => {
-  console.log(globalThis.__MONGO_URI__)
   connection = await MongoClient.connect(globalThis.__MONGO_URI__)
   db = await connection.db(globalThis.__MONGO_DB_NAME__)
 })
